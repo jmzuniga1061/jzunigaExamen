@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenJulianZ.Views.registroPage"
+             Title="registroPage">
+
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20"
+                             Spacing="15">
+
+            <Label x:Name="lblUsuario"
+                   FontSize="18"
+                   FontAttributes="Bold"/>
+
+            <Label Text="REGISTRO"
+                   FontSize="24"
+                   HorizontalOptions="Center"/>
+
+            <!-- Grid 5 filas x 2 columnas -->
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="Auto,*"
+                  ColumnSpacing="10"
+                  RowSpacing="10">
+
+                <Label Text="Fecha:"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+
+                <DatePicker x:Name="dpFecha"
+                            Grid.Row="0"
+                            Grid.Column="1"/>
+
+                <Label Text="País:"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+
+                <Picker x:Name="pkPais"
+                        Grid.Row="1"
+                        Grid.Column="1">
+
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Ecuador</x:String>
+                            <x:String>Perú</x:String>
+                            <x:String>Colombia</x:String>
+                            <x:String>Chile</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+                <Label Text="Ciudad:"
+                       Grid.Row="2"
+                       Grid.Column="0"/>
+
+                <Picker x:Name="pkCiudad"
+                        Grid.Row="2"
+                        Grid.Column="1">
+
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Cuenca</x:String>
+                            <x:String>Quito</x:String>
+                            <x:String>Guayaquil</x:String>
+                            <x:String>Loja</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+
+                </Picker>
+
+                <Label Text="Monto Inicial:"
+                       Grid.Row="3"
+                       Grid.Column="0"/>
+
+                <Entry x:Name="txtMontoInicial"
+                       Keyboard="Numeric"
+                       Grid.Row="3"
+                       Grid.Column="1"/>
+
+                <Label Text="Pago Mensual:"
+                       Grid.Row="4"
+                       Grid.Column="0"/>
+
+                <Entry x:Name="txtPagoMensual"
+                       IsEnabled="False"
+                       Grid.Row="4"
+                       Grid.Column="1"/>
+
+            </Grid>
+
+            <Button Text="Calcular Pago"
+                    Clicked="BtnCalcular_Clicked"/>
+
+            <!-- Grid 2 filas x 3 columnas -->
+
+            <Grid RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="*,*,*">
+
+                <Label Text="Nombre"
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+
+                <Label Text="Apellido"
+                       Grid.Row="0"
+                       Grid.Column="1"/>
+
+                <Label Text="Edad"
+                       Grid.Row="0"
+                       Grid.Column="2"/>
+
+                <Entry x:Name="txtNombre"
+                       Placeholder="Nombre"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+
+                <Entry x:Name="txtApellido"
+                       Placeholder="Apellido"
+                       Grid.Row="1"
+                       Grid.Column="1"/>
+
+                <Entry x:Name="txtEdad"
+                       Placeholder="Edad"
+                       Keyboard="Numeric"
+                       Grid.Row="1"
+                       Grid.Column="2"/>
+
+            </Grid>
+
+            <Button Text="Ver Resumen"
+                    Clicked="BtnResumen_Clicked"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
